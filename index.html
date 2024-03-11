@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SSM</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+			}
+			#ssm {
+				font-size: 10rem;
+				font-family: sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<span id="ssm">0</span>
+
+		<script>
+			function updateTime() {
+				let now = new Date();
+				let secondsAfterMidnight = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+				let ssm = document.getElementById("ssm");
+				ssm.innerText = secondsAfterMidnight;
+			}
+
+			// Update time initially
+			updateTime();
+
+			// Update time every second
+			setInterval(updateTime, 1000);
+		</script>
+	</body>
+</html>
